@@ -5,6 +5,8 @@ session_start();
 
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +15,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Dashboard - Distributor</title>
+        <title>Dashboard - Admin</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
@@ -113,13 +115,73 @@ session_start();
             <div id="layoutSidenav_content">
                 <main style="background-color: #00FF7F;">
                     <div class="container-fluid px-4">
-                    <ol class="breadcrumb mb-1">
+                        <ol class="breadcrumb mb-1">
                             <li class="breadcrumb-item active mt-3">Dashboard</li>
                         </ol>
                         <h1 class="mt-4"><?php echo "Selamat datang, " .$_SESSION['username']; ?></h1>
                         <h5 class="mb-3">Silahkan pilih work action-nya</h5>
                         <div class="row">
-                            <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div class="col-xl-4 col-md-4 col-sm-6">
+                                <div class="card bg-light mb-4">
+                                    <div class="card-body">
+                                        <i class="bi bi-person-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
+                                        <h5 class="card-title d-flex justify-content-center">Penjualan</h5>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <div class="small"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 col-sm-6">
+                                <div class="card bg-light mb-4">                                    
+                                    <div class="card-body">
+                                        <i class="bi bi-kanban-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
+                                        <h5 class="card-title d-flex justify-content-center">Manajemen</h5>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <div class="small"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 col-sm-6">
+                                <div class="card bg-light mb-4"> 
+                                    <div class="card-body">
+                                        <i class="bi bi-box2-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
+                                        <h5 class="card-title d-flex justify-content-center">Bahan Baku</h5>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <div class="small"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 col-sm-6">
+                                <div class="card bg-light mb-4"> 
+                                    <div class="card-body">
+                                        <i class="bi bi-credit-card-2-back-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
+                                        <h5 class="card-title d-flex justify-content-center">Pembayaran</h5>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <div class="small"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 col-sm-6">
+                                <div class="card bg-light mb-4"> 
+                                    <div class="card-body">
+                                        <i class="bi bi-cart-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
+                                        <h5 class="card-title d-flex justify-content-center">Pembelian</h5>
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <div class="small"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-4 col-sm-6">
                                 <div class="card bg-light mb-4"> 
                                     <div class="card-body">
                                         <i class="bi bi-arrow-right-square-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
@@ -642,18 +704,6 @@ session_start();
                         </div>
                     </div>
                 </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
