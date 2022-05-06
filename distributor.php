@@ -1,8 +1,10 @@
 <?php 
 
 require('config.php');
-session_start();
-
+require('auth_session.php');
+if($_SESSION['level']!="Distributor"){
+    header("location:index.php?pesan=anda_bukan_distributor");
+}
 ?>
 
 <!DOCTYPE html>
@@ -113,20 +115,17 @@ session_start();
             <div id="layoutSidenav_content">
                 <main style="background-color: #00FF7F;">
                     <div class="container-fluid px-4">
-                    <ol class="breadcrumb mb-1">
-                            <li class="breadcrumb-item active mt-3">Dashboard</li>
-                        </ol>
                         <h1 class="mt-4"><?php echo "Selamat datang, " .$_SESSION['username']; ?></h1>
                         <h5 class="mb-3">Silahkan pilih work action-nya</h5>
                         <div class="row">
-                            <div class="col-xl-12 col-md-12 col-sm-12">
+                            <div class="col-xl-4 col-md-4 col-sm-12">
                                 <div class="card bg-light mb-4"> 
                                     <div class="card-body">
                                         <i class="bi bi-arrow-right-square-fill  d-flex justify-content-center" style="font-size: 72px;"></i>
                                         <h5 class="card-title d-flex justify-content-center">Distribusi</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="distributor/distribusi.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

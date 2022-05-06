@@ -1,7 +1,10 @@
 <?php 
 
 require('config.php');
-session_start();
+require('auth_session.php');
+if($_SESSION['level']!="Admin"){
+    header("location:index.php?pesan=anda_bukan_admin");
+}
 
 ?>
 
@@ -48,7 +51,7 @@ session_start();
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="index.php">
+                            <a class="nav-link" href="admin.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -115,9 +118,6 @@ session_start();
             <div id="layoutSidenav_content">
                 <main style="background-color: #00FF7F;">
                     <div class="container-fluid px-4">
-                        <ol class="breadcrumb mb-1">
-                            <li class="breadcrumb-item active mt-3">Dashboard</li>
-                        </ol>
                         <h1 class="mt-4"><?php echo "Selamat datang, " .$_SESSION['username']; ?></h1>
                         <h5 class="mb-3">Silahkan pilih work action-nya</h5>
                         <div class="row">
@@ -128,7 +128,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Penjualan</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="admin/penjualan.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -140,7 +140,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Manajemen</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="admin/manajemen.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Bahan Baku</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="admin/bahan_baku.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Pembayaran</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="admin/pembayaran.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Pembelian</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="admin/pembelian.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Distribusi</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="admin/distribusi.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

@@ -1,7 +1,10 @@
 <?php 
 
 require('config.php');
-session_start();
+require('auth_session.php');
+if($_SESSION['level']!="Karyawan"){
+    header("location:index.php?pesan=anda_bukan_Karyawan");
+}
 
 ?>
 
@@ -114,10 +117,7 @@ session_start();
                 <main style="background-color: #00FF7F;">
                     <div class="container-fluid px-4">
                         <h1 class="mt-4"><?php echo "Selamat datang, " .$_SESSION['username']; ?></h1>
-                        <h5 class="text-primary"><?php echo "Statusmu adalah " .$_SESSION['level']; ?></h5>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
+                        <h5 class="mb-3">Silahkan pilih work action-nya</h5>
                         <div class="row">
                             <div class="col-xl-4 col-md-4 col-sm-6">
                                 <div class="card bg-light mb-4">
@@ -126,7 +126,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Status Pembelian</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="karyawan/status_pembelian.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Data Produk</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="karyawan/data_produk.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -150,7 +150,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Manajemen Keuangan</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="karyawan/manajemen_keuangan.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -162,7 +162,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Bahan Baku</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="karyawan/bahan_baku.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@ session_start();
                                         <h5 class="card-title d-flex justify-content-center">Pembayaran</h5>
                                     </div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small stretched-link" href="#">View Details</a>
+                                        <a class="small stretched-link" href="karyawan/pembayaran.php">View Details</a>
                                         <div class="small"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

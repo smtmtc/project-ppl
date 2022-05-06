@@ -42,7 +42,7 @@
                                         if ($result) {
                                             echo "<div class='form'>
                                                 <h3>You are registered successfully.</h3><br/>
-                                                <p class='link'>Click here to <a href='login.php'>Login</a></p>
+                                                <p class='link'>Click here to <a href='index.php'>Login</a></p>
                                                 </div>";
                                             } 
                                             else {
@@ -84,9 +84,8 @@
                                             <div class="form-floating">
                                                 <select class="form-select" id="floatingSelect" name="level" aria-label="Floating label select example">
                                                     <option selected>Pilih Level</option>
-                                                    <option value="1">Admin</option>
-                                                    <option value="2">Karyawan</option>
-                                                    <option value="3">Distributor</option>
+                                                    <option value="Karyawan">Karyawan</option>
+                                                    <option value="Distributor">Distributor</option>
                                                 </select>
                                                 <label for="floatingLabel">Register as</label>
                                             </div>
